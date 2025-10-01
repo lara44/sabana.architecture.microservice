@@ -1,0 +1,4 @@
+###
+
+GET http://localhost:5280/api/products/list
+Accept: application/json
