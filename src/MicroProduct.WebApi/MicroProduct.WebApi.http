@@ -1,6 +1,4 @@
-@MicroProduct.WebApi_HostAddress = http://localhost:5280
-
-GET {{MicroProduct.WebApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###
+
+GET http://localhost:5280/api/products/list
+Accept: application/json
