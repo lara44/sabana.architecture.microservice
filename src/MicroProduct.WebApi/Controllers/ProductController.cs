@@ -10,9 +10,11 @@ namespace MicroProduct.WebApi.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IAtcMediator _mediator;
+        private readonly ILogger<ProductController> _logger;
         public ProductController(IAtcMediator mediator, ILogger<ProductController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -20,6 +22,7 @@ namespace MicroProduct.WebApi.Controllers
         {
             var query = new GetAllProductsQuery();
             var result = await _mediator.ExecuteAsync(query);
+            _logger.LogInformation("Retrieved products: {Products}", result);
             return StatusCode(result!.code, result);
         }
     }
