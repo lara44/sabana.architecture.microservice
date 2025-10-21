@@ -10,15 +10,12 @@ namespace MicroProduct.WebApi.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IAtcMediator _mediator;
-        private readonly ILogger<ProductController> _logger;
-
         public ProductController(IAtcMediator mediator, ILogger<ProductController> logger)
         {
             _mediator = mediator;
-            _logger = logger;
         }
 
-        [HttpGet("list")]
+        [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
             var query = new GetAllProductsQuery();
