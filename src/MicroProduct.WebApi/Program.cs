@@ -18,7 +18,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/", () => "MicroProduct.WebApi is running...");
+app.MapGet("/", () => "WebApi is running...");
 
 app.MapControllers();
 app.Run();
