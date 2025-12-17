@@ -22,7 +22,7 @@ namespace MicroProduct.WebApi.Controllers
         {
             var query = new GetAllProductsQuery();
             var result = await _mediator.ExecuteAsync(query);
-            _logger.LogInformation("Retrieved products: {Products}", result);
+            _logger.LogInformation("Retrieved products - : {Products}", result);
             return StatusCode(result!.code, result);
         }
     }
