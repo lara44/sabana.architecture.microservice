@@ -28,7 +28,7 @@ namespace MicroProduct.Application.Products.Queries.GetAllProducts
             }).ToList();
 
             _logger.LogInformation("Retrieved {Count} products from the repository.", productDtos.Count);
-            return ResponseDto<List<ProductDto>>.Success("Products retrieved successfully", productDtos);
+            return ResponseDto<List<ProductDto>>.Success("Products retrieved successfully : ", productDtos);
         }
     }
 }
